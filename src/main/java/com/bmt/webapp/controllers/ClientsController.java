@@ -86,12 +86,12 @@ public class ClientsController {
 		// 查找客户端
 		Client client = clientRepo.findById(id).orElse(null);
 		if (client == null) {
-			return "redirect:/clients"; // 如果未找到，重定向到客户端列表
+			return "redirect:/clients"; 
 		}
 
 		if (result.hasErrors()) {
-			model.addAttribute("client", client); // 重新加载客户端对象以便在编辑页面中显示
-			return "clients/edit"; // 返回编辑页面
+			model.addAttribute("client", client); 
+			return "clients/edit"; 
 		}
 
 		// 更新客户端信息
@@ -103,14 +103,14 @@ public class ClientsController {
 		client.setStatus(clientDo.getStatus());
 
 		try {
-			clientRepo.save(client); // 保存更新后的客户端
+			clientRepo.save(client); 
 		} catch (Exception ex) {
 			result.addError(new FieldError("clientDo", "email", clientDo.getEmail(), false, null, null,
 					"Email address is already used"));
 			return "redirect:/edit?id=" + id;
 		}
 
-		return "redirect:/clients"; // 成功后重定向到客户端列表
+		return "redirect:/clients"; 
 	}
 	@GetMapping("/delete")
 	public String deleteClient(@RequestParam int id) {
