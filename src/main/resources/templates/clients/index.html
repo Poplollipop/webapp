@@ -12,20 +12,20 @@
 <body>
 
     <div class="container my-3">
-        <h1 class="text-center mb-3">List of Clients</h1>
-        <a class="btn btn-primary" href="/clients/create">New Clients</a>
+        <h1 class="text-center mb-3">客戶清單</h1>
+        <a class="btn btn-primary" href="/clients/create">新增客戶</a>
 
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>名字</th>
                     <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Status</th>
-                    <th>Created At</th>
-                    <th>Action</th>
+                    <th>手機號碼</th>
+                    <th>地址</th>
+                    <th>狀態</th>
+                    <th>創立時間</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -38,8 +38,8 @@
                     <td th:text="${client.status}"></td>
                     <td th:text="${client.createdAt.toString().substring(0, 10)}"></td>
                     <td style="white-space: nowrap">
-                        <a class="btn btn-primary btn-sm" th:href="@{/clients/edit(id=${client.id})}"> Edit </a> 
-                        <a class="btn btn-danger btn-sm" th:href="@{/clients/delete(id=${client.id})}" onclick="return confirm('Are you sure?')"> Delete </a>
+                        <a class="btn btn-primary btn-sm" th:href="@{/clients/edit(id=${client.id})}"> 編輯 </a> 
+                        <a class="btn btn-danger btn-sm" th:href="@{/clients/delete(id=${client.id})}" onclick="return confirm('確定刪除嗎？ 無法復原！')"> 刪除 </a>
                     </td>
                 </tr>
             </tbody>

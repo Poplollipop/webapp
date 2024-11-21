@@ -11,11 +11,11 @@
     <div class="container my-4">
     	<div class="row">
     		<div class="col-md-8 mx-auto rounded border p-4">
-    			<h2 class="text-center mb-5">New Client</h2>
+    			<h2 class="text-center mb-5">新增客戶</h2>
     			
     			<form method="post" th:object="${clientDo}">
     				<div class="row mb-3">
-    					<label class="col-sm-4 col-form-label">First Name</label>
+    					<label class="col-sm-4 col-form-label">姓氏</label>
     					<div class="col-sm-8">
     						<input class="form-control" th:field="${clientDo.firstName}">
     						<p th:if="${#fields.hasErrors('firstName')}"
@@ -25,7 +25,7 @@
     				</div>
     				
     				<div class="row mb-3">
-    					<label class="col-sm-4 col-form-label">Last Name</label>
+    					<label class="col-sm-4 col-form-label">名字</label>
     					<div class="col-sm-8">
     						<input class="form-control" th:field="${clientDo.lastName}">
     						<p th:if="${#fields.hasErrors('lastName')}"
@@ -45,7 +45,7 @@
     				</div>
 
 					<div class="row mb-3">
-    					<label class="col-sm-4 col-form-label">Phone</label>
+    					<label class="col-sm-4 col-form-label">手機號碼</label>
     					<div class="col-sm-8">
     						<input class="form-control" th:field="${clientDo.phone}">
     						<p th:if="${#fields.hasErrors('phone')}"
@@ -55,7 +55,7 @@
     				</div>
     				
     				<div class="row mb-3">
-    					<label class="col-sm-4 col-form-label">Address</label>
+    					<label class="col-sm-4 col-form-label">地址</label>
     					<div class="col-sm-8">
     						<input class="form-control" th:field="${clientDo.address}">
     						<p th:if="${#fields.hasErrors('address')}"
@@ -65,7 +65,7 @@
     				</div>
     				
     				<div class="row mb-3">
-    					<label class="col-sm-4 col-form-label">Status</label>
+    					<label class="col-sm-4 col-form-label">狀態</label>
     					<div class="col-sm-8">
     						<select class="form-select" th:field="${clientDo.status}">
     						<option value='New'>New</option>
@@ -81,10 +81,10 @@
     				
     				<div class="row">
     					<div class="offset-sm-4 col-sm-4 d-grid">
-    						<button type="submit" class="btn btn-primary">Submit</button>
+    						<button type="submit" class="btn btn-primary">確認</button>
     					</div>
     					<div class="col-sm-4 d-grid">
-    						<a class="btn btn-outline-primary" href="/clients">Cancel</a>
+    						<a class="btn btn-outline-primary" href="/clients">取消</a>
     					</div>
     				</div>
     			</form>
